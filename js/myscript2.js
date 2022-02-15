@@ -6,6 +6,20 @@ class clouds {
   }
 }
 
+class Rain {
+	constructor(id, desc, icon) {
+	  this.id = id;
+	  this.desc = desc;
+	  this.icon = icon;
+	}
+
+
+
+
+
+
+  }
+
 const morningCloudsArray = new Array();
 const nightCloudsArray = new Array();
 const cityName = document.querySelector(".city-name");
@@ -30,7 +44,7 @@ function apiData(response) {
   
  if((response.weather[0].icon).includes('d')) {
 	 console.log('Day');
-	 for (let x of nightCloudsArray) {
+	 for (let x of morningCloudsArray) {
 		// currentTempIcon.innerHTML = `<img src="images/icons/${x.icon}">`;
 		if (x.id === response.weather[0].id) {
 			currentTempIcon.innerHTML = `<img src="images/icons/${x.icon}">`;
@@ -60,7 +74,7 @@ if(response.sys.country !== "US") {
 
 
 
-function jsonData(data) {
+function cloudData(data) {
   for (let i of data.dayCloudStatus) {
     morningCloudsArray.push(new clouds(i.id, i.desc, i.img));
   }

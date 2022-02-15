@@ -14,9 +14,14 @@ $(document).ready(function () {
     getJSONData(apiURI);
   });
 
-  $.getJSON("dataFiles/cities.json", function( data ) {
+  $.getJSON("dataFiles/clouds.json", function( data ) {
 
-    jsonData(data);
+    cloudData(data);
+  });
+
+  $.getJSON("dataFiles/rain.json", function( data ) {
+
+    rainData(data);
   });
 
 });

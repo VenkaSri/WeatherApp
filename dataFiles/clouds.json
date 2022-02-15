@@ -3,22 +3,22 @@
     {
       "id": 800,
 	  "desc": "Sunny",
-	  "img": "day.png"
+	  "img": "sunny.png"
     },
     {
       "id": 801,
       "desc": "Mostly sunny",
-	  "img": "day.png"
+	  "img": "mostlysunny.png"
     },
     {
       "id": 802,
       "desc": "Mostly cloudy",
-	  "img": "day.png"
+	  "img": "partlysunny.png"
     },
     {
       "id": 803,
       "desc": "Broken clouds",
-	  "img": "day.png"
+	  "img": "partlysunny.png"
     },
 	{
 		"id": 804,
@@ -41,17 +41,17 @@
     {
       "id": 802,
       "desc": "Mostly cloudy",
-	  "img": "clear.png"
+	  "img": "cloudy.png"
     },
     {
       "id": 803,
       "desc": "Broken clouds",
-	  "img": "clear.png"
+	  "img": "cloudy.png"
     },
 	{
 		"id": 804,
 		"desc": "Cloudy",
-		"img": "clody.png"
+		"img": "cloudy.png"
 	  }
   ]
 }

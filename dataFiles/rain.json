@@ -1,0 +1,57 @@
+{	
+  "dayCloudStatus": [
+    {
+      "id": 800,
+	  "desc": "Sunny",
+	  "img": "sunny.png"
+    },
+    {
+      "id": 801,
+      "desc": "Mostly sunny",
+	  "img": "mostlysunny.png"
+    },
+    {
+      "id": 802,
+      "desc": "Mostly cloudy",
+	  "img": "partlysunny.png"
+    },
+    {
+      "id": 803,
+      "desc": "Broken clouds",
+	  "img": "partlysunny.png"
+    },
+	{
+		"id": 804,
+		"desc": "Cloudy",
+		"img": "cloudy.png"
+	  }
+  ],
+  
+  "nightCloudStatus": [
+    {
+      "id": 800,
+	  "desc": "Clear",
+	  "img": "clear.png"
+    },
+    {
+      "id": 801,
+      "desc": "Partly cloudy",
+	  "img": "partlycloudy.png"
+    },
+    {
+      "id": 802,
+      "desc": "Mostly cloudy",
+	  "img": "cloudy.png"
+    },
+    {
+      "id": 803,
+      "desc": "Broken clouds",
+	  "img": "cloudy.png"
+    },
+	{
+		"id": 804,
+		"desc": "Cloudy",
+		"img": "cloudy.png"
+	  }
+  ]
+}
