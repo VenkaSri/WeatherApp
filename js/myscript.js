@@ -1,41 +1,36 @@
-var cityArray = new Array();
-var latArray = new Array();
-var lngArray = new Array();
 
+let city;
+let cityDetail;
+city = "Toronto";
 
 $(document).ready(function () {
-    $.getJSON("dataFiles/cities.json", function(data) {
-        $("#cityList").html("");
-        for (let i = 0; i < data.cities.length; i++) {
-            cityArray[i] = data.cities[i].cityName;
-            latArray[i] = data.cities[i].cityLat;
-            lngArray[i] = data.cities[i].cityLng;
-        
-            $("#cityList").append(
-                `
-                    <li id='${i}'>
-                        <a href='weather.html'>
-                            ${data.cities[i].cityName}
-                        </a>
-                    </li>
-                
-                
-                `
-            );
+  console.log("ji");
+  let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
+  getJSONData(apiURI);
 
-            }
-        localStorage.setItem("cityArray", JSON.stringify(cityArray));
-        localStorage.setItem("cityLat", JSON.stringify(latArray));
-        localStorage.setItem("cityLng", JSON.stringify(lngArray));
-        
-        
-        
-       
-        
-        
-    })
+  $("#submitButton").click(function () {
+    getCity();
+    let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
+    getJSONData(apiURI);
+  });
+
+  $.getJSON("dataFiles/cities.json", function( data ) {
+
+    jsonData(data);
+  });
+
 });
 
-$(document).on("click", "#cityList > li", function() {
-    localStorage.setItem("rowID", $(this).closest("li").attr('id'))
-})
+function getCity() {
+  city = document.querySelector("#userInput").value;
+}
+
+function getJSONData(url) {
+  $.ajax({
+    type: "GET",
+    url: url,
+    dataType: "jsonp",
+    success: apiData,
+  });
+}
+

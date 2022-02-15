@@ -6,19 +6,32 @@
 	<title>JSONP</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/mystyles.css" rel="stylesheet">
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 	<script src="js/jquery.js"></script>
 	<script src="js/myscript.js"></script>
+	<script src="js/myscript2.js" defer></script>
+	
+
 </head>
 
 <body>
-	<div id="mainJSONP">
-		<header>
-			<h2>Select a city to show current weather...</h2>
-		</header>
-		<hr>
-		<section id="content">
-			<ul id="cityList"></ul>
-		</section>
+	<div class="main-container">
+		<div class="search">
+			<input type="text" id="userInput">
+			<div id="submitButton">Submit</div>
+		</div>
+		
+		<div class="main-info">
+			<div class="city-name"></div>
+			<div class="city-type-time">7:15 PM</div>
+			<div class="temp">
+				<div class="current-icon"></div>
+				<div class="city-temp"></div>
+			</div>
+			
+		</div>
 	</div>
+	
 </body>
 </html>

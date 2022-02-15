@@ -1,24 +1,57 @@
-{
-	"cities": [
-		{
-			"cityName": "Brampton, Canada",
-			"cityLat": 43.656233,
-			"cityLng": -79.739397
-		},
-		{
-			"cityName": "Miami, Florida",
-			"cityLat": 25.761722,
-			"cityLng": -80.192180
-		},
-		{
-			"cityName": "London, Great Britian",
-			"cityLat": 51.5085,
-			"cityLng": -0.1258
-		},
-		{
-			"cityName": "Sydney, Australia",
-			"cityLat": -33.8679,
-			"cityLng": 151.2073
-		}
-	]
+{	
+  "dayCloudStatus": [
+    {
+      "id": 800,
+	  "desc": "Sunny",
+	  "img": "day.png"
+    },
+    {
+      "id": 801,
+      "desc": "Mostly sunny",
+	  "img": "day.png"
+    },
+    {
+      "id": 802,
+      "desc": "Mostly cloudy",
+	  "img": "day.png"
+    },
+    {
+      "id": 803,
+      "desc": "Broken clouds",
+	  "img": "day.png"
+    },
+	{
+		"id": 804,
+		"desc": "Cloudy",
+		"img": "cloudy.png"
+	  }
+  ],
+  
+  "nightCloudStatus": [
+    {
+      "id": 800,
+	  "desc": "Clear",
+	  "img": "clear.png"
+    },
+    {
+      "id": 801,
+      "desc": "Partly cloudy",
+	  "img": "partlycloudy.png"
+    },
+    {
+      "id": 802,
+      "desc": "Mostly cloudy",
+	  "img": "clear.png"
+    },
+    {
+      "id": 803,
+      "desc": "Broken clouds",
+	  "img": "clear.png"
+    },
+	{
+		"id": 804,
+		"desc": "Cloudy",
+		"img": "clody.png"
+	  }
+  ]
 }
