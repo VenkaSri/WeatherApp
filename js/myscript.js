@@ -4,7 +4,7 @@ let cityDetail;
 city = "Toronto";
 
 $(document).ready(function () {
-  console.log("ji");
+
   let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
   getJSONData(apiURI);
 
@@ -13,6 +13,9 @@ $(document).ready(function () {
     let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
     getJSONData(apiURI);
     clearField();
+    isSelected = true;
+    changeSelectedColor();
+  
   });
 
   document.onkeydown = (e) => {
@@ -21,6 +24,8 @@ $(document).ready(function () {
       let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
       getJSONData(apiURI);
       clearField();
+      isSelected = true;
+    changeSelectedColor();
     }
   }
 
