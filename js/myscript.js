@@ -12,17 +12,27 @@ $(document).ready(function () {
     getCity();
     let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
     getJSONData(apiURI);
+    clearField();
   });
+
+  document.onkeydown = (e) => {
+    if(e.key === 'Enter') {
+      getCity();
+      let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
+      getJSONData(apiURI);
+      clearField();
+    }
+  }
 
   $.getJSON("dataFiles/clouds.json", function( data ) {
 
     cloudData(data);
   });
 
-  $.getJSON("dataFiles/rain.json", function( data ) {
+  // $.getJSON("dataFiles/rain.json", function( data ) {
 
-    rainData(data);
-  });
+  //   rainData(data);
+  // });
 
 });
 

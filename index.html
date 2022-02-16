@@ -8,6 +8,7 @@
 	<link href="css/mystyles.css" rel="stylesheet">
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="js/jquery.js"></script>
 	<script src="js/myscript.js"></script>
 	<script src="js/myscript2.js" defer></script>
@@ -18,13 +19,13 @@
 <body>
 	<div class="main-container">
 		<div class="search">
-			<input type="text" id="userInput">
-			<div id="submitButton">Submit</div>
+			<input type="text" id="userInput" autofocus>
+			<div id="submitButton"><i class="fa-solid fa-magnifying-glass"></i></div>
 		</div>
 		
 		<div class="main-info">
 			<div class="city-name"></div>
-			<div class="city-type-time">7:15 PM</div>
+			<div class="city-type-time"></div>
 			<div class="temp">
 				<div class="current-icon"></div>
 				<div class="city-temp"></div>

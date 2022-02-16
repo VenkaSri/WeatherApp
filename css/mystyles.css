@@ -10,9 +10,11 @@
 
 
 /* body {
-background-image: url('../images/day.png');
-background-repeat: no-repeat;
-background-size: cover;
+background-image: url('../images/bg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+	background-position: center center;
 
 } */
 
@@ -25,14 +27,16 @@ background-size: cover;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
 }
+
+
 
 .main-info {
 	text-align: center;
 	margin-left: 20px;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 10px;
 }
 
@@ -59,6 +63,7 @@ background-size: cover;
 	font-variant: small-caps;
 	font-family: 'Rajdhani', sans-serif;
 	position: relative;
+	width: 500px;
 }
 
 .temp-deg {
@@ -70,64 +75,39 @@ background-size: cover;
 .current-icon img {
 	width: 69px;
 	height: 55px;
+	position: absolute;
+	top: 12px;
+	left: 30%;
 }
 
+.search {
+	height: 40px;
+	width: 400px;
+	border-top-left-radius: 20px 20px;
+	border-bottom-left-radius: 20px 20px;
+	border-top-right-radius: 20px 20px;
+	border-bottom-right-radius: 20px 20px;
+	border: 1px solid black;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+	cursor: pointer;
 
-h2{font-weight: bold; color: navy; font-style:italic; text-align: center;
-	 padding: 5px; background-color: azure;}
-
-li {
-	list-style-type: none; text-align: center; 
-	font-size: 1.5em; font-weight: bold; margin: 5px 10px 15px -15px;
 }
 
-a{text-decoration: none;}
-
-li hr {border: thin dotted navy;}
-
-.gridArea {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-areas: 
-		"cityLabel dataCity"
-		"tempLabel dataTemp"
-		"windLabel dataWind"
-		"humLabel dataHum"
-		"pressLabel dataPress"
-	;
-	grid-gap: 5px;
+.search input[type="text"] {
+	background-color:rgba(0, 0, 0, 0);
+    color:black;
+    border: none;
+    outline:none;
+    height:40px;
+	width: 300px;
+    transition:height 1s;
+    -webkit-transition:height 1s;
+	margin-left: 10px;
 }
 
-hr {border: thick solid navy;}
-
-.cityLabel {grid-area: cityLabel;}
-.tempLabel {grid-area: tempLabel;}
-.windLabel {grid-area: windLabel;}
-.humLabel {grid-area: humLabel;}
-.pressLabel {grid-area: pressLabel;}
-
-.dataCity {grid-area: dataCity;}
-.dataTemp {grid-area: dataTemp;}
-.dataWind {grid-area: dataWind;}
-.dataHum {grid-area: dataHum;}
-.dataPress {grid-area: dataPress;}
-
-.formatLabel {font-size: 1.5em; font-style: italic; color: navy; text-align: center;}
-.formatData {font-size: 1.5em; font-weight: bold; color: navy;}
-
-@media screen and (orientation: portrait) {
-	.gridArea {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-areas: 
-			"cityLabel" "dataCity"
-			"tempLabel" "dataTemp"
-			"windLabel" "dataWind"
-			"humLabel" "dataHum"
-			"pressLabel" "dataPress"
-		;
-		grid-gap: 5px;
-	}	
-	.formatLabel {font-size: 2em; font-style: italic; color: navy; text-align: center;;}
-	.formatData {font-size: 2em; font-weight: bold; color: navy; text-align: center; margin-bottom: 5px;} 
+.search #submitButton {
+	align-self: center;
+	margin-right: 10px;
 }

@@ -26,6 +26,7 @@ const cityName = document.querySelector(".city-name");
 const cityInfo = document.querySelector(".city-type-time");
 const cityTemp = document.querySelector(".city-temp");
 const currentTempIcon = document.querySelector(".current-icon");
+const userInput = document.querySelector("#userInput");
 
 function apiData(response) {
 	console.log(response);
@@ -93,4 +94,14 @@ function calculateFaraTemp(data) {
 	let temp = data.main.temp;
 	let currTemp = (temp - 273) * (9/5) + 32;
 	return currTemp.toFixed(0);
+}
+
+document.onkeydown = (e) => {
+	if(e.key === 'Enter') {
+		alert('e');
+	}
+}
+
+function clearField() {
+userInput.value = "";
 }
