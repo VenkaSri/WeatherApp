@@ -66,6 +66,7 @@ background-image: url('../images/bg.jpg');
 	justify-content: center;
 	align-items: center;
 	width: 500px;
+	border: 1px solid red;
 }
 
 .deg-type {
@@ -89,6 +90,7 @@ background-image: url('../images/bg.jpg');
 
 .deg-f:hover {
 	color: #c3c3c3;
+	opacity: 1;
 }
 
 .current-icon {
@@ -100,6 +102,7 @@ background-image: url('../images/bg.jpg');
 
 .selected {
 	color: #c3c3c3;
+	opacity: 0.4;
 }
 
 .divider {
@@ -116,6 +119,21 @@ background-image: url('../images/bg.jpg');
 .current-icon img {
 	width: 69px;
 	height: 55px;
+}
+
+.feelsLikeTemp {
+	margin-top: -10%;
+	margin-left: 24%;
+	display: flex;
+	color: #fff;
+}
+
+.feelsLikeTemp p:first-child {
+	width: 40px;
+}
+
+.feelsLikeTemp p:last-child {
+	font-size: 40px;
 }
 
 .search {
@@ -150,3 +168,30 @@ background-image: url('../images/bg.jpg');
 	margin-right: 10px;
 	cursor: pointer;
 }
+
+
+@media screen and (max-width: 420px) {
+
+	.city-name {
+		font-size: 80px;
+	}
+	
+	.city-type-time {
+		font-size: 15px;
+	}
+	
+	.temp {
+		font-size: 30px;
+	}
+	
+	.deg-type {
+		display: flex;
+		font-size: 15px;
+		align-self: flex-start;
+		gap: 5px
+	}
+
+	.search {
+		width: 350px;		
+	}
+  }
