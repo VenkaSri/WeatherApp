@@ -100,6 +100,12 @@ background-image: url('../images/bg.jpg');
 
 .selected {
 	color: #c3c3c3;
+	opacity: 0.1;
+}
+
+
+.selected:hover {
+	opacity: 0.8;
 }
 
 .divider {
@@ -117,6 +123,23 @@ background-image: url('../images/bg.jpg');
 	width: 69px;
 	height: 55px;
 }
+
+
+.feelsLikeTemp {
+	margin-top: -10%;
+	margin-left: 35%;
+	display: flex;
+	color: #fff;
+}
+
+.feelsLikeTemp p:first-child {
+	width: 40px;
+}
+
+.feelsLikeTemp p:last-child {
+	font-size: 40px;
+}
+
 
 .search {
 	height: 40px;

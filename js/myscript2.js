@@ -14,6 +14,14 @@ class Rain {
   }
 }
 
+class Temp {
+  constructor(data) {
+    this.data = data;
+  }
+
+  
+}
+
 const morningCloudsArray = new Array();
 const nightCloudsArray = new Array();
 const cityName = document.querySelector(".city-name");
@@ -21,13 +29,14 @@ const cityInfo = document.querySelector(".city-type-time");
 const cityTemp = document.querySelector(".city-temp");
 const currentTempIcon = document.querySelector(".current-icon");
 const userInput = document.querySelector("#userInput");
+const feelsLikeTemp = document.querySelector(".feelsLikeTemp p:last-child");
 const degFara = document.querySelector(".deg-f");
 const degCel = document.querySelector(".deg-c");
 let isSelected = true;
 
 function apiData(response) {
 
-
+console.log(response);
   cityName.innerHTML = response.name;
 
   const timezone = response.timezone; //needs to be converted in minutes
@@ -59,15 +68,18 @@ function apiData(response) {
 
   changeSelectedColor();
   cityTemp.innerHTML = `${calculateCelsiusTemp(response)}`;
+  feelsLikeTemp.innerHTML = `${calculateCelsiusFeelsTemp(response)}`;
 
   degFara.addEventListener("click", () => {
     cityTemp.innerHTML = calculateFaraTemp(response);
+    feelsLikeTemp.innerHTML = calculateFaraFeelsTemp(response);
 	isSelected = false;
 	changeSelectedColor();
   });
 
   degCel.addEventListener("click", () => {
     cityTemp.innerHTML = calculateCelsiusTemp(response);
+    feelsLikeTemp.innerHTML = calculateCelsiusFeelsTemp(response);
 	isSelected = true;
 	changeSelectedColor();
   });
@@ -94,6 +106,18 @@ function calculateCelsiusTemp(data) {
 
 function calculateFaraTemp(data) {
   let temp = data.main.temp;
+  let currTemp = (temp - 273) * (9 / 5) + 32;
+  return currTemp.toFixed(0);
+}
+
+function calculateCelsiusFeelsTemp(data) {
+  let temp = data.main.feels_like;
+  let currTemp = temp - 273;
+  return currTemp.toFixed(0);
+}
+
+function calculateFaraFeelsTemp(data) {
+  let temp = data.main.feels_like;
   let currTemp = (temp - 273) * (9 / 5) + 32;
   return currTemp.toFixed(0);
 }
