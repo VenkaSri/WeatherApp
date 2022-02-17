@@ -1,100 +1,58 @@
-class APIDATA {
-
-
-
-  updateCity(city) {
+class APIURL {
+  constructor(city) {
     this.city = city;
   }
 
-  displayCity() {
-    console.log(this.city);
-   
+  updateCity(currCity) {
+    this.city = currCity;
+    currentCity = currCity;
   }
- 
-  getResponse() {
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
-    getJSONData(url);
+
+  sendURL() {
+    let apiURL = `http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
+    return apiURL;
+  }
+
+  clearFocusField() {
+    userInput.value = '';
+    userInput.focus();
   }
 
 
-  apiData(response) {
-    console.log(response);
-  }
 
 }
 
 
-const subBtn = document.querySelector('#submitButton');
-const userInput = document.querySelector("#userInput");
-
-
-
-const urlData = new APIDATA();
-
-subBtn.addEventListener('click', () => {
-  urlData.updateCity(userInput.value);
-  urlData.displayCity();
-  urlData.getResponse();
-});
-
-
-
-
-let city;
-let cityDetail;
-city = "Toronto";
-
+const url = new APIURL(currentCity);
 $(document).ready(function () {
-
-  let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
-  getJSONData(apiURI);
-
-  // $("#submitButton").click(function () {
-  //   getCity();
-  //   let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
-  //   getJSONData(apiURI);
-  //   clearField();
-  //   isSelected = true;
-  //   changeSelectedColor();
+  getJSONData();
   
-  // });
+  $.getJSON("dataFiles/rain.json", function( data ) {
 
-  document.onkeydown = (e) => {
-    if(e.key === 'Enter') {
-      getCity();
-      let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
-      getJSONData(apiURI);
-      clearField();
-      isSelected = true;
-    changeSelectedColor();
-    }
-  }
-
-  $.getJSON("dataFiles/clouds.json", function( data ) {
-
-    cloudData(data);
+    rainData(data);
   });
-
-  // $.getJSON("dataFiles/rain.json", function( data ) {
-
-  //   rainData(data);
-  // });
-
 });
 
-function getCity() {
-  city = document.querySelector("#userInput").value;
-}
-
-function getJSONData(url) {
+function getJSONData() {
   $.ajax({
     type: "GET",
-    url: url,
+    url: url.sendURL(),
     dataType: "jsonp",
     success: apiData,
   });
+
 }
 
-function apiData(data) {
-  urlData.apiData(data);
+subBtn.addEventListener('click', () => {
+  url.updateCity(userInput.value);
+  getJSONData();
+  url.clearFocusField();
+});
+
+document.onkeydown = (e) => {
+  if(e.key === 'Enter') {
+    url.updateCity(userInput.value);
+    getJSONData();
+    url.clearFocusField();
+  }
 }
