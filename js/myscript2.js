@@ -32,12 +32,14 @@ const userInput = document.querySelector("#userInput");
 const feelsLikeTemp = document.querySelector(".feelsLikeTemp p:last-child");
 const degFara = document.querySelector(".deg-f");
 const degCel = document.querySelector(".deg-c");
+const windData = document.querySelector('.wind-data');
 let isSelected = true;
 
 function apiData(response) {
 
 console.log(response);
   cityName.innerHTML = response.name;
+ 
 
   const timezone = response.timezone; //needs to be converted in minutes
   const timezoneInMinutes = timezone / 60;
@@ -69,10 +71,13 @@ console.log(response);
   changeSelectedColor();
   cityTemp.innerHTML = `${calculateCelsiusTemp(response)}`;
   feelsLikeTemp.innerHTML = `${calculateCelsiusFeelsTemp(response)}`;
+  windData.innerHTML =  `${metersToKPH(response)}km/h ${convertDegreeToCompassPoint(response.wind.deg)}`;
+
 
   degFara.addEventListener("click", () => {
     cityTemp.innerHTML = calculateFaraTemp(response);
     feelsLikeTemp.innerHTML = calculateFaraFeelsTemp(response);
+    windData.innerHTML =  `${metersToMPH(response)}mph ${convertDegreeToCompassPoint(response.wind.deg)}`;
 	isSelected = false;
 	changeSelectedColor();
   });
@@ -80,6 +85,7 @@ console.log(response);
   degCel.addEventListener("click", () => {
     cityTemp.innerHTML = calculateCelsiusTemp(response);
     feelsLikeTemp.innerHTML = calculateCelsiusFeelsTemp(response);
+    windData.innerHTML =  `${metersToKPH(response)}km/h ${convertDegreeToCompassPoint(response.wind.deg)}`;
 	isSelected = true;
 	changeSelectedColor();
   });
@@ -122,6 +128,18 @@ function calculateFaraFeelsTemp(data) {
   return currTemp.toFixed(0);
 }
 
+function metersToKPH(data) {
+  let speed = data.wind.speed;
+  let currSpeed = speed * 3.6;
+  return currSpeed.toFixed(1);
+}
+
+function metersToMPH(data) {
+  let speed = data.wind.speed;
+  let currSpeed = speed *  2.237;
+  return currSpeed.toFixed(1);
+}
+
 document.onkeydown = (e) => {
   if (e.key === "Enter") {
     alert("e");
@@ -141,3 +159,14 @@ function changeSelectedColor() {
 		degFara.classList.remove('selected');
 	}
 }
+
+// degrees (meteorological) ----> point on a compass
+function convertDegreeToCompassPoint(windDeg) {
+  const compassPoints = ["N", "NNE", "NE", "ENE", 
+                         "E", "ESE", "SE", "SSE",
+                         "S", "SSW", "SW", "WSW", 
+                         "W", "WNW", "NW", "NNW"];
+  const rawPosition = Math.floor((windDeg / 22.5) + 0.5);
+  const arrayPosition = (rawPosition % 16);
+  return compassPoints[arrayPosition];
+};
