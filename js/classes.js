@@ -28,31 +28,36 @@ class APIDATA {
     // weatherConditions.push(this.data.weather);
     weatherConditions.length = 0;
     for (let i of this.data.weather) {
-        weatherConditions.push(i);
-      }
-
-
+      weatherConditions.push(i);
+    }
   }
 
   dayNightStatus() {
     weatherConditions.length = 1;
-      for(let i of weatherConditions) {
-         if(i.icon.includes('n')) {
-             this.night();
-         } else {
-            this.morning();
-         }
+    for (let i of weatherConditions) {
+      if (i.icon.includes("n")) {
+        this.night();
+      } else {
+        this.morning();
       }
-      this.weatherArray();
+
+
+
+      
+    }
+    
   }
 
   morning() {
-    console.log(`m`);
-    // currentTempIcon.innerHTML = `<img src="images/icons/${x.icon}">`;
+    iconM();
+
   }
 
+
+  
+
   night() {
-    console.log(`night`);
+    console.log(rainNArray);
     // currentTempIcon.innerHTML = `<img src="images/icons/${x.icon}">`;
   }
 }
@@ -70,13 +75,17 @@ function apiData(data) {
     aData.celsius();
   });
 
-
-
-for(let x of weatherConditions) {
-    let id = x.id.toString();
-    let icon = x.icon;
-    if(id.charAt(0) === '5' ) console.log('x');
+  // for (let x of weatherConditions) {
+  //   let id = x.id.toString();
+  //   let icon = x.icon;
+  //   if (id.charAt(0) === "5") console.log("x");
+  // }
 }
 
 
-}
+$(document).ready(function () {
+  $.getJSON("dataFiles/rain.json", function( data ) {
+
+    rainData(data);
+  });
+});

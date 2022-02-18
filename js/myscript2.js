@@ -9,6 +9,7 @@ const userInput = document.querySelector("#userInput");
 let currentCity = 'Toronto';
 const weatherConditions = new Array();
 const dayNightStatusArr = new Array();
+const wType = document.querySelector('.type');
 const rainMArray = new Array();
 const rainNArray = new Array();
 const degFara = document.querySelector(".deg-f");

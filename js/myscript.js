@@ -27,10 +27,6 @@ const url = new APIURL(currentCity);
 $(document).ready(function () {
   getJSONData();
   
-  $.getJSON("dataFiles/rain.json", function( data ) {
-
-    rainData(data);
-  });
 });
 
 function getJSONData() {
