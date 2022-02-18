@@ -47,6 +47,8 @@ console.log(response);
   for (let x of morningCloudsArray) {
     if (x.id === response.weather[0].id) {
       cityInfo.innerHTML = `${x.desc} | ${currTime}`;
+    } else {
+      console.log(x);
     }
   }
 
