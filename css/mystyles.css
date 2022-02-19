@@ -36,14 +36,15 @@ background-image: url('../images/bg.jpg');
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 10px;
 	margin-top: 50px;
+	border: 1px solid red;
 }
 
 .city-name {
 	color: #fff;
 	font-size: 120px;
-
+	margin-top: -20px;
+	border: 1px solid red;
 	font-family: 'Rajdhani', sans-serif;
 }
 
@@ -66,7 +67,16 @@ background-image: url('../images/bg.jpg');
 	justify-content: center;
 	align-items: center;
 	width: 500px;
+
 }
+
+.date-time {
+	border: 1px solid red;
+	display: flex;
+	justify-content: space-between;
+}
+
+
 
 .deg-type {
 	display: flex;

@@ -4,7 +4,8 @@ class APIDATA {
     cityName.innerHTML = data.name;
     this.celsius();
     this.weather();
-    this.changeSelectedColor(); 
+    this.changeSelectedColor();
+    this.dateAndTime();
   }
 
   updateData() {
@@ -26,21 +27,21 @@ class APIDATA {
   }
 
   changeSelectedColor() {
-    if(isSelected) {
-      degFara.classList.add('selected');
-      degCel.classList.remove('selected');
+    if (isSelected) {
+      degFara.classList.add("selected");
+      degCel.classList.remove("selected");
     } else {
-      degCel.classList.add('selected');
-      degFara.classList.remove('selected');
+      degCel.classList.add("selected");
+      degFara.classList.remove("selected");
     }
   }
 
   weather() {
     for (let i of this.data.weather) {
       if (i.icon.includes("n")) {
-        dayOrNight = 'night';
+        dayOrNight = "night";
       } else {
-        dayOrNight = 'morning';
+        dayOrNight = "morning";
       }
 
       typeOfWeather = i.main;
@@ -48,13 +49,21 @@ class APIDATA {
     }
     loadWeatherData();
   }
-  
+
+  dateAndTime() {
+    // from stackoverflow
+    const timezoneInMinutes = this.data.timezone / 60;
+    const currTime = moment().utcOffset(timezoneInMinutes).format("h:mm A");
+    const currDate = moment().utcOffset(timezoneInMinutes).format("dddd MMM, D");
+    currentTime.innerHTML = currTime;
+    currentDate.innerHTML = currDate;
+    
+  }
 }
 
 function apiData(data) {
   const aData = new APIDATA(data);
   aData.updateData();
-  
 
   degFara.addEventListener("click", () => {
     aData.fahrenheit();
@@ -67,19 +76,12 @@ function apiData(data) {
     isSelected = true;
     aData.changeSelectedColor();
   });
-
-
-
-
-
-
 }
 
 function loadWeatherData() {
   $(document).ready(function () {
-    $.getJSON("dataFiles/weather.json", function( data ) {
-  
+    $.getJSON("dataFiles/weather.json", function (data) {
       weatherData(data);
     });
-  })
+  });
 }
