@@ -2,7 +2,7 @@ class APIDATA {
   constructor(data) {
     this.data = data;
     cityName.innerHTML = data.name;
-    this.celsius();
+    this.metric();
     this.weather();
     this.changeSelectedColor();
     this.dateAndTime();
@@ -12,18 +12,22 @@ class APIDATA {
     console.log(this.data);
   }
 
-  celsius() {
+  metric() {
     let temp = this.data.main.temp - 273;
     let feels_like = this.data.main.feels_like - 273;
+    let currWindSpeed = this.data.wind.speed * 3.6;
     cityTemp.innerHTML = temp.toFixed(0);
     feelsLikeTemp.innerHTML = feels_like.toFixed(0);
+    windData.innerHTML = `${currWindSpeed.toFixed(1)} km/h`;
   }
 
-  fahrenheit() {
+  imperial() {
     let temp = (this.data.main.temp - 273) * (9 / 5) + 32;
     let feels_like = (this.data.main.feels_like - 273) * (9 / 5) + 32;
+    let currWindSpeed = this.data.wind.speed *  2.237;
     cityTemp.innerHTML = temp.toFixed(0);
     feelsLikeTemp.innerHTML = feels_like.toFixed(0);
+    windData.innerHTML = `${currWindSpeed.toFixed(1)} mph`;
   }
 
   changeSelectedColor() {
@@ -56,8 +60,7 @@ class APIDATA {
     const currTime = moment().utcOffset(timezoneInMinutes).format("h:mm A");
     const currDate = moment().utcOffset(timezoneInMinutes).format("dddd MMM, D");
     currentTime.innerHTML = currTime;
-    currentDate.innerHTML = currDate;
-    
+    currentDate.innerHTML = currDate; 
   }
 }
 
@@ -66,13 +69,13 @@ function apiData(data) {
   aData.updateData();
 
   degFara.addEventListener("click", () => {
-    aData.fahrenheit();
+    aData.imperial();
     isSelected = false;
     aData.changeSelectedColor();
   });
 
   degCel.addEventListener("click", () => {
-    aData.celsius();
+    aData.metric();
     isSelected = true;
     aData.changeSelectedColor();
   });

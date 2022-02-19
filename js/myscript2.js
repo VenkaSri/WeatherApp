@@ -14,6 +14,7 @@ const degFara = document.querySelector(".deg-f");
 const degCel = document.querySelector(".deg-c");
 const currentTime = document.querySelector(".time");
 const currentDate = document.querySelector(".date");
+const windData = document.querySelector(".wind-data");
 let currentCity = 'Toronto';
 let isSelected = true;
 let typeOfWeather = '';
