@@ -1,16 +1,11 @@
 {
   "day": {
-    "clear": {
+    "clear": [{
       "id": 800,
       "desc": "Sunny",
       "img": "sunny.png"
-    },
+    }],
     "clouds": [
-      {
-        "id": 800,
-        "desc": "Sunny",
-        "img": "sunny.png"
-      },
       {
         "id": 801,
         "desc": "Mostly sunny",

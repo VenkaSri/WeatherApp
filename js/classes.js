@@ -8,10 +8,6 @@ class APIDATA {
     this.dateAndTime();
   }
 
-  updateData() {
-    console.log(this.data);
-  }
-
   metric() {
     let temp = this.data.main.temp - 273;
     let feels_like = this.data.main.feels_like - 273;
@@ -19,6 +15,7 @@ class APIDATA {
     cityTemp.innerHTML = temp.toFixed(0);
     feelsLikeTemp.innerHTML = feels_like.toFixed(0);
     windData.innerHTML = `${currWindSpeed.toFixed(1)} km/h`;
+    pressureData.innerHTML =  `${this.data.main.pressure / 10} kPa`;
   }
 
   imperial() {
@@ -28,6 +25,7 @@ class APIDATA {
     cityTemp.innerHTML = temp.toFixed(0);
     feelsLikeTemp.innerHTML = feels_like.toFixed(0);
     windData.innerHTML = `${currWindSpeed.toFixed(1)} mph`;
+    pressureData.innerHTML =  `${this.data.main.pressure} mb`;
   }
 
   changeSelectedColor() {
@@ -47,7 +45,6 @@ class APIDATA {
       } else {
         dayOrNight = "morning";
       }
-
       typeOfWeather = i.main;
       weatherID = i.id;
     }
@@ -65,9 +62,9 @@ class APIDATA {
 }
 
 function apiData(data) {
+  console.log(data);
   const aData = new APIDATA(data);
-  aData.updateData();
-
+  humidityData.innerHTML = `${data.main.humidity}%`;
   degFara.addEventListener("click", () => {
     aData.imperial();
     isSelected = false;
