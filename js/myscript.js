@@ -1,56 +1,54 @@
-
-let city;
-let cityDetail;
-city = "Toronto";
-
-$(document).ready(function () {
-
-  let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
-  getJSONData(apiURI);
-
-  $("#submitButton").click(function () {
-    getCity();
-    let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
-    getJSONData(apiURI);
-    clearField();
-    isSelected = true;
-    changeSelectedColor();
-  
-  });
-
-  document.onkeydown = (e) => {
-    if(e.key === 'Enter') {
-      getCity();
-      let apiURI = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
-      getJSONData(apiURI);
-      clearField();
-      isSelected = true;
-    changeSelectedColor();
-    }
+class APIURL {
+  constructor(city) {
+    this.city = city;
   }
 
-  $.getJSON("dataFiles/clouds.json", function( data ) {
+  updateCity(currCity) {
+    this.city = currCity;
+    currentCity = currCity;
+  }
 
-    cloudData(data);
-  });
+  sendURL() {
+    let apiURL = `http://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=5e71ec5fa96a769d7e32e9f4ccf84ae2`;
+    return apiURL;
+  }
 
-  // $.getJSON("dataFiles/rain.json", function( data ) {
+  clearFocusField() {
+    userInput.value = '';
+    userInput.focus();
+  }
 
-  //   rainData(data);
-  // });
 
-});
 
-function getCity() {
-  city = document.querySelector("#userInput").value;
 }
 
-function getJSONData(url) {
+
+const url = new APIURL(currentCity);
+$(document).ready(function () {
+  getJSONData();
+  
+});
+
+function getJSONData() {
   $.ajax({
     type: "GET",
-    url: url,
+    url: url.sendURL(),
     dataType: "jsonp",
     success: apiData,
   });
+
 }
 
+subBtn.addEventListener('click', () => {
+  url.updateCity(userInput.value);
+  getJSONData();
+  url.clearFocusField();
+});
+
+document.onkeydown = (e) => {
+  if(e.key === 'Enter') {
+    url.updateCity(userInput.value);
+    getJSONData();
+    url.clearFocusField();
+  }
+}

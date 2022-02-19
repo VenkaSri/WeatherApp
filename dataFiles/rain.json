@@ -1,57 +1,107 @@
 {	
-  "dayCloudStatus": [
+  "dayStatus": [
     {
-      "id": 800,
-	  "desc": "Sunny",
+    "id": 500,
+	  "desc": "light rain",
 	  "img": "sunny.png"
     },
     {
-      "id": 801,
-      "desc": "Mostly sunny",
+    "id": 501,
+    "desc": "moderate rain",
 	  "img": "mostlysunny.png"
     },
     {
-      "id": 802,
-      "desc": "Mostly cloudy",
+    "id": 502,
+    "desc": "heavy intensity",
 	  "img": "partlysunny.png"
     },
     {
-      "id": 803,
-      "desc": "Broken clouds",
+    "id": 503,
+    "desc": "very heavy rain",
 	  "img": "partlysunny.png"
     },
-	{
-		"id": 804,
-		"desc": "Cloudy",
-		"img": "cloudy.png"
-	  }
+    {
+    "id": 504,
+	  "desc": "extreme rain",
+	  "img": "sunny.png"
+    },
+    {
+      "id": 511,
+	  "desc": "freezing rain",
+	  "img": "sunny.png"
+    },
+    {
+    "id": 520,
+	  "desc": "light intensity shower rain",
+	  "img": "sunny.png"
+    },
+    {
+    "id": 521,
+	  "desc": "shower rain",
+	  "img": "sunny.png"
+    },
+    {
+    "id": 522,
+	  "desc": "heavy intensity shower rain",
+	  "img": "sunny.png"
+    },
+    {
+    "id": 531,
+	  "desc": "ragged shower rain",
+	  "img": "sunny.png"
+    }
   ],
   
-  "nightCloudStatus": [
+  "nightStatus": [
     {
-      "id": 800,
-	  "desc": "Clear",
-	  "img": "clear.png"
+    "id": 500,
+	  "desc": "light rain",
+	  "img": "sunny.png"
     },
     {
-      "id": 801,
-      "desc": "Partly cloudy",
-	  "img": "partlycloudy.png"
+    "id": 501,
+    "desc": "moderate rain",
+	  "img": "mostlysunny.png"
     },
     {
-      "id": 802,
-      "desc": "Mostly cloudy",
-	  "img": "cloudy.png"
+    "id": 502,
+    "desc": "heavy intensity",
+	  "img": "partlysunny.png"
     },
     {
-      "id": 803,
-      "desc": "Broken clouds",
-	  "img": "cloudy.png"
+    "id": 503,
+    "desc": "very heavy rain",
+	  "img": "partlysunny.png"
     },
-	{
-		"id": 804,
-		"desc": "Cloudy",
-		"img": "cloudy.png"
-	  }
+    {
+    "id": 504,
+	  "desc": "extreme rain",
+	  "img": "sunny.png"
+    },
+    {
+      "id": 511,
+	  "desc": "freezing rain",
+	  "img": "sunny.png"
+    },
+    {
+    "id": 520,
+	  "desc": "light intensity shower rain",
+	  "img": "sunny.png"
+    },
+    {
+    "id": 521,
+	  "desc": "shower rain",
+	  "img": "sunny.png"
+    },
+    {
+    "id": 522,
+	  "desc": "heavy intensity shower rain",
+	  "img": "sunny.png"
+    },
+    {
+    "id": 531,
+	  "desc": "ragged shower rain",
+	  "img": "sunny.png"
+    }
   ]
 }
