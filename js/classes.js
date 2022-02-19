@@ -3,7 +3,7 @@ class APIDATA {
     this.data = data;
     cityName.innerHTML = data.name;
     this.celsius();
-    this.weatherArray();
+    this.weather();
     this.changeSelectedColor(); 
   }
 
@@ -35,38 +35,26 @@ class APIDATA {
     }
   }
 
-  weatherArray() {
-    // weatherConditions.push(this.data.weather);
-    weatherConditions.length = 0;
+  weather() {
     for (let i of this.data.weather) {
-      weatherConditions.push(i);
-    }
-  }
-
-  dayNightStatus() {
-    for (let i of weatherConditions) {
       if (i.icon.includes("n")) {
-        this.night();
+        dayOrNight = 'night';
       } else {
-        this.morning();
+        dayOrNight = 'morning';
       }
+
+      typeOfWeather = i.main;
+      weatherID = i.id;
     }
+    loadWeatherData();
   }
-
-  morning() {
-    iconM();
-  }
-
-  night() {
-    console.log(rainNArray);
-    // currentTempIcon.innerHTML = `<img src="images/icons/${x.icon}">`;
-  }
+  
 }
 
 function apiData(data) {
   const aData = new APIDATA(data);
   aData.updateData();
-  aData.dayNightStatus();
+  
 
   degFara.addEventListener("click", () => {
     aData.fahrenheit();
@@ -83,11 +71,15 @@ function apiData(data) {
 
 
 
-$(document).ready(function () {
-  $.getJSON("dataFiles/weather.json", function( data ) {
 
-    weatherData(data);
-  });
-})
 
+}
+
+function loadWeatherData() {
+  $(document).ready(function () {
+    $.getJSON("dataFiles/weather.json", function( data ) {
+  
+      weatherData(data);
+    });
+  })
 }

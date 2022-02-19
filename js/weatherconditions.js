@@ -1,4 +1,4 @@
-class Rain {
+class Weather {
   constructor(id, desc, icon) {
     this.id = id;
     this.desc = desc;
@@ -7,25 +7,45 @@ class Rain {
 }
 
 
-function rainData(data) {
-  for (let i of data.dayStatus) {
-    rainMArray.push(new Rain(i.id, i.desc, i.img));
+function weatherData(data) {
+if(dayOrNight === 'night') {
+  switch(typeOfWeather) {
+    case 'Clouds': 
+    addToArray(data.night.clouds) ;
+      break;
+    case 'Clear': 
+      addToArray(data.night.clear) ;
+      break;
+    default:
+      break;
   }
-  for (let i of data.nightStatus) {
-    rainNArray.push(new Rain(i.id, i.desc, i.img));
+} else {
+  switch(typeOfWeather) {
+    case 'Clouds': 
+      addToArray(data.night.clouds) ;
+      break;
+    case 'Clear': 
+      addToArray(data.night.clear) ;
+      break;
+    default:
+      break;
   }
+}
+
+
 }
 
 //[rainMArray, cloudMArray, thunderMArray]
 
 
-function iconM() {
-  for(let i of rainMArray) {
-    for(let x of weatherConditions) {
-      if(i.id === x.id) {
-        currentTempIcon.innerHTML = `<img src="images/icons/${i.icon}">`;
-        wType.innerHTML = x.description;
-      }
+
+function addToArray(wData) {
+  for(let x of wData) {
+    if(x.id === weatherID) {
+      console.log(x.desc);
+      cityInfo.innerHTML = x.desc;
+      currentTempIcon.innerHTML = `<img src="images/icons/${x.img}">`;
     }
   }
+
 }

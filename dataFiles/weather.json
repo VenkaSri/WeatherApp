@@ -1,0 +1,170 @@
+{
+  "day": {
+    "clear": {
+      "id": 800,
+      "desc": "Sunny",
+      "img": "sunny.png"
+    },
+    "clouds": [
+      {
+        "id": 800,
+        "desc": "Sunny",
+        "img": "sunny.png"
+      },
+      {
+        "id": 801,
+        "desc": "Mostly sunny",
+        "img": "mostlysunny.png"
+      },
+      {
+        "id": 802,
+        "desc": "Mostly cloudy",
+        "img": "partlysunny.png"
+      },
+      {
+        "id": 803,
+        "desc": "Broken clouds",
+        "img": "partlysunny.png"
+      },
+      {
+        "id": 804,
+        "desc": "Cloudy",
+        "img": "cloudy.png"
+      }
+    ],
+    "thunderstorm": [
+      {
+        "id": 200,
+        "desc": "thunderstorm with light rain",
+        "img": "sunny.png"
+      },
+      {
+        "id": 201,
+        "desc": "thunderstorm with rain",
+        "img": "sunny.png"
+      },
+      {
+        "id": 202,
+        "desc": "thunderstorm with heavy rain",
+        "img": "sunny.png"
+      },
+      {
+        "id": 210,
+        "desc": "light thunderstorm",
+        "img": "sunny.png"
+      },
+      {
+        "id": 211,
+        "desc": "thunderstorm",
+        "img": "sunny.png"
+      },
+      {
+        "id": 212,
+        "desc": "heavy thunderstorm",
+        "img": "sunny.png"
+      },
+      {
+        "id": 221,
+        "desc": "ragged thunderstorm",
+        "img": "sunny.png"
+      },
+      {
+        "id": 230,
+        "desc": "thunderstorm with light drizzle",
+        "img": "sunny.png"
+      },
+      {
+        "id": 231,
+        "desc": "thunderstorm with drizzle",
+        "img": "sunny.png"
+      },
+      {
+        "id": 232,
+        "desc": "thunderstorm with heavy drizzle",
+        "img": "sunny.png"
+      }
+    ]
+  },
+  "night": {
+    "clear": [
+      {
+      "id": 800,
+      "desc": "Clear",
+      "img": "sunny.png"
+    }],
+    "clouds": [
+      {
+        "id": 801,
+        "desc": "Partly cloudy",
+        "img": "sunny.png"
+      },
+      {
+        "id": 801,
+        "desc": "Mostly cloudy",
+        "img": "mostlysunny.png"
+      },
+      {
+        "id": 803,
+        "desc": "Broken clouds",
+        "img": "partlysunny.png"
+      },
+      {
+        "id": 804,
+        "desc": "Cloudy",
+        "img": "cloudy.png"
+      }
+    ],
+    "thunderstorm": [
+      {
+        "id": 200,
+        "desc": "thunderstorm with light rain",
+        "img": "sunny.png"
+      },
+      {
+        "id": 201,
+        "desc": "thunderstorm with rain",
+        "img": "sunny.png"
+      },
+      {
+        "id": 202,
+        "desc": "thunderstorm with heavy rain",
+        "img": "sunny.png"
+      },
+      {
+        "id": 210,
+        "desc": "light thunderstorm",
+        "img": "sunny.png"
+      },
+      {
+        "id": 211,
+        "desc": "thunderstorm",
+        "img": "sunny.png"
+      },
+      {
+        "id": 212,
+        "desc": "heavy thunderstorm",
+        "img": "sunny.png"
+      },
+      {
+        "id": 221,
+        "desc": "ragged thunderstorm",
+        "img": "sunny.png"
+      },
+      {
+        "id": 230,
+        "desc": "thunderstorm with light drizzle",
+        "img": "sunny.png"
+      },
+      {
+        "id": 231,
+        "desc": "thunderstorm with drizzle",
+        "img": "sunny.png"
+      },
+      {
+        "id": 232,
+        "desc": "thunderstorm with heavy drizzle",
+        "img": "sunny.png"
+      }
+    ]
+  }
+}

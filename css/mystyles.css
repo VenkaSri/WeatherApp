@@ -47,14 +47,13 @@ background-image: url('../images/bg.jpg');
 	font-family: 'Rajdhani', sans-serif;
 }
 
-.city-type-time {
+.wCond {
 	text-align: center;
 	color: #fff;
 	font-size: 20px;
 	font-variant: small-caps;
 	font-family: 'Rajdhani', sans-serif;
 	margin-top: -30px;
-	border: 1px solid red;
 }
 
 .temp {
@@ -67,7 +66,6 @@ background-image: url('../images/bg.jpg');
 	justify-content: center;
 	align-items: center;
 	width: 500px;
-	border: 1px solid red;
 }
 
 .deg-type {
