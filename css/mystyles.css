@@ -127,6 +127,7 @@ background-image: url('../images/bg.jpg');
 	margin-left: 35%;
 	display: flex;
 	color: #fff;
+	font-family: 'Rajdhani', sans-serif;
 }
 
 .feelsLikeTemp p:first-child {

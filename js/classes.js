@@ -4,6 +4,7 @@ class APIDATA {
     cityName.innerHTML = data.name;
     this.celsius();
     this.weatherArray();
+    this.changeSelectedColor(); 
   }
 
   updateData() {
@@ -24,6 +25,16 @@ class APIDATA {
     feelsLikeTemp.innerHTML = feels_like.toFixed(0);
   }
 
+  changeSelectedColor() {
+    if(isSelected) {
+      degFara.classList.add('selected');
+      degCel.classList.remove('selected');
+    } else {
+      degCel.classList.add('selected');
+      degFara.classList.remove('selected');
+    }
+  }
+
   weatherArray() {
     // weatherConditions.push(this.data.weather);
     weatherConditions.length = 0;
@@ -33,28 +44,18 @@ class APIDATA {
   }
 
   dayNightStatus() {
-    weatherConditions.length = 1;
     for (let i of weatherConditions) {
       if (i.icon.includes("n")) {
         this.night();
       } else {
         this.morning();
       }
-
-
-
-      
     }
-    
   }
 
   morning() {
     iconM();
-
   }
-
-
-  
 
   night() {
     console.log(rainNArray);
@@ -69,23 +70,24 @@ function apiData(data) {
 
   degFara.addEventListener("click", () => {
     aData.fahrenheit();
+    isSelected = false;
+    aData.changeSelectedColor();
   });
 
   degCel.addEventListener("click", () => {
     aData.celsius();
+    isSelected = true;
+    aData.changeSelectedColor();
   });
 
-  // for (let x of weatherConditions) {
-  //   let id = x.id.toString();
-  //   let icon = x.icon;
-  //   if (id.charAt(0) === "5") console.log("x");
-  // }
-}
+
 
 
 $(document).ready(function () {
-  $.getJSON("dataFiles/rain.json", function( data ) {
+  $.getJSON("dataFiles/weather.json", function( data ) {
 
-    rainData(data);
+    weatherData(data);
   });
-});
+})
+
+}
