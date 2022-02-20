@@ -8,13 +8,24 @@
 	box-sizing: border-box;
 }
 
+html,body
+{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; 
+}
 
-.main-container {
+body {
 	background-image: url('../images/bg.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
-	min-height: 100vh;
 	background-position: center center;
+
+}
+
+.main-container {
+
+	border: 1px solid red;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -260,5 +271,4 @@
 	margin-top: 10px;
 
 }
-
 
