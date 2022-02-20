@@ -24,15 +24,11 @@ body {
 }
 
 .main-container {
-
-	border: 1px solid red;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 50px
 }
-
-
 
 .main-info {
 	text-align: center;
@@ -195,57 +191,49 @@ body {
 	height: 100px;
 	background: #000000;
 	border-radius: 20px;
-	opacity: 0.6;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-
-}
-
-.title {
-	width: 105px;
-	height: 30px;
-	border-radius: 20px;
-	background: #9b9a9a;
-	margin-top: 10px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 20px;
-	font-variant: small-caps;
-	opacity: 1;
-
-}
-
-.title p {
-	color: #fff;
 }
 
 .wind-data,
 .humidity-data,
-.pressure-data {
+.pressure-data,
+.high-data,
+.low-data,
+.sunrise-data,
+.sunset-data {
 	color: #fff;
 	margin-top: 10px;
+	align-self: center;
 
 }
 
 .other-city-info {
 	padding: 5px;
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+
+	padding: 20px;
 }
+
+
 
 .other-city-info > div {
 	margin: 5px;
 	width: 120px;
 	height: 100px;
-	background: #000000;
+	background: #9B9A9A;
 	border-radius: 20px;
-	opacity: 0.6;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	opacity: .90;
+}
+
+.title img {
+	width: 25px;
+	height: 20px;
+	opacity: 1; 
 
 }
+
 
 .title {
 	width: 105px;
@@ -254,21 +242,13 @@ body {
 	background: #9b9a9a;
 	margin-top: 10px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	gap:4px;
 	font-size: 20px;
 	font-variant: small-caps;
-	opacity: 1;
-
-}
-
-.title p {
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	opacity: 0.9;
 	color: #fff;
 }
 
-.wind-data {
-	color: #fff;
-	margin-top: 10px;
 
-}
 

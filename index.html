@@ -6,6 +6,7 @@
 	<title>The Weather App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/mystyles.css" rel="stylesheet">
+	<link href="css/mediaquery.css" rel="stylesheet">
 	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,7 +22,7 @@
 <body>
 	<div class="main-container">
 		<div class="search">
-			<input type="text" id="userInput" autofocus>
+			<input type="text" id="userInput" placeholder=""autofocus>
 			<div id="submitButton"><i class="fa-solid fa-magnifying-glass"></i></div>
 		</div>
 		<div class="main-info">
@@ -56,16 +57,53 @@
 		</div>
 		<div class="other-city-info">
 			<div class="wind">
-				<div class="title"><p>Wind</p></div>
+				<div class="title">
+					<img src="images/icons/wind.png">
+					<p>Wind</p>
+				</div>
 				<div class="wind-data"></div>
 			</div>
 			<div class="Humidity">
-				<div class="title"><p>Humidity</p></div>
+				<div class="title">
+					<img src="images/icons/humidity.png">
+					<p>Humidity</p>
+				</div>
 				<div class="humidity-data"></div>
 			</div>
 			<div class="pressure">
-				<div class="title"><p>Pressure</p></div>
+				<div class="title">
+					<img src="images/icons/pressure.png">
+					<p>Pressure</p>
+				</div>
 				<div class="pressure-data"></div>
+			</div>
+			<div class="high">
+				<div class="title">
+					<img src="images/icons/high.png">
+					<p>High</p>
+				</div>
+				<div class="high-data"></div>
+			</div>
+			<div class="low">
+				<div class="title">
+					<img src="images/icons/low.png">
+					<p>Low</p>
+				</div>
+				<div class="low-data"></div>
+			</div>
+			<div class="sunrise">
+				<div class="title">
+					<img src="images/icons/sunrise.png">
+					<p>Sunrise</p>
+				</div>
+				<div class="sunrise-data"></div>
+			</div>
+			<div class="sunset">
+				<div class="title">
+					<img src="images/icons/sunset.png">
+					<p>Sunset</p>
+				</div>
+				<div class="sunset-data"></div>
 			</div>
 		</div>
 	</div>
