@@ -41,8 +41,10 @@ gap: 10px;
 .city-name {
 	color: #fff;
 	font-size: 120px;
+	display: grid;
 	margin-top: -20px;
 	font-family: 'Rajdhani', sans-serif;
+
 }
 
 .wCond {

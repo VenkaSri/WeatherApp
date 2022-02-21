@@ -1,6 +1,6 @@
 @media screen and (max-width: 920px) {
   .other-city-info {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -9,14 +9,19 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .deg-type {
-      background:rgba(0, 0, 0, .4);
-    }
  }
 
  @media screen and (max-width: 420px) {
     .other-city-info {
       grid-template-columns: repeat(2, 1fr);
     }
+
+    /* .city-name {
+      color: #fff;
+      font-size: 80px;
+      display: grid;
+      margin-top: -20px;
+      font-family: 'Rajdhani', sans-serif;
+    } */
  }
   
