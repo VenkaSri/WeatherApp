@@ -17,9 +17,6 @@ class APIURL {
     userInput.value = '';
     userInput.focus();
   }
-
-
-
 }
 
 

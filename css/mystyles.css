@@ -27,7 +27,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 50px
+gap: 10px;
 }
 
 .main-info {
@@ -64,7 +64,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	width: 500px;
-
 }
 
 .date-time {
@@ -75,8 +74,6 @@ body {
 	font-family: 'Rajdhani', sans-serif;
 	color: #fff;
 }
-
-
 
 .deg-type {
 	display: flex;
@@ -157,8 +154,6 @@ body {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 10px;
-	
-
 }
 
 .search input[type="text"] {
@@ -180,21 +175,6 @@ body {
 	color: #c3c3c3;
 }
 
-.other-city-info {
-	padding: 5px;
-	display: flex;
-}
-
-.other-city-info > div {
-	margin: 5px;
-	width: 120px;
-	height: 100px;
-	background: #000000;
-	border-radius: 20px;
-	display: flex;
-	flex-direction: column;
-}
-
 .wind-data,
 .humidity-data,
 .pressure-data,
@@ -203,43 +183,36 @@ body {
 .sunrise-data,
 .sunset-data {
 	color: #fff;
-	margin-top: 10px;
 	align-self: center;
-
+	font-family: 'Rajdhani', sans-serif;
 }
 
 .other-city-info {
-	padding: 5px;
 	display: grid;
-	grid-template-columns: repeat(7, 1fr);
+	grid-template-columns: repeat(6, 1fr);
 
-	padding: 20px;
 }
 
-
-
 .other-city-info > div {
-	margin: 5px;
+	margin-right: 5px;
 	width: 120px;
-	height: 100px;
-	background: #9B9A9A;
+	height: 90px;
 	border-radius: 20px;
 	opacity: .90;
+	display: flex;
+	flex-direction: column;
+	background:rgba(0, 0, 0, .4);
+	
 }
 
 .title img {
 	width: 25px;
 	height: 20px;
-	opacity: 1; 
-
 }
-
 
 .title {
 	width: 105px;
 	height: 30px;
-	border-radius: 20px;
-	background: #9b9a9a;
 	margin-top: 10px;
 	display: flex;
 	gap:4px;
@@ -252,3 +225,41 @@ body {
 
 
 
+.high .title img {
+	width: 20px;
+	height: 28px;
+	margin-left: 2px;
+}
+
+.low .title img {
+	width: 20px;
+	height: 28px;
+	margin-left: 2px;
+}
+
+.sunrise .title img {
+	width: 28px;
+	height: 20px;
+	margin-left: 2px;
+}
+
+.sunset .title img {
+	width: 28px;
+	height: 20px;
+	margin-left: 2px;
+}
+
+.humidity .title img {
+	width: 30px;
+	height: 25px;
+}
+
+.high .title {
+	margin-left: 5px;
+}
+
+.high .title div {
+	display: flex;
+	align-self: center;
+	margin-left: 10px;
+}

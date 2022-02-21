@@ -1,112 +1,113 @@
 <!DOCTYPE html>
-<!-- JSONP -->
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>The Weather App</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="css/mystyles.css" rel="stylesheet">
-	<link href="css/mediaquery.css" rel="stylesheet">
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<script src="js/jquery.js"></script>
-	<script src="js/myscript2.js" defer></script>
-	<script src="js/classes.js" defer></script>
-	<script src="js/myscript.js" defer></script>
-	<script src="js/weatherconditions.js" defer></script>
-	
+  <head>
+    <meta charset="utf-8" />
+    <title>The Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/mystyles.css" rel="stylesheet" />
+    <link href="css/mediaquery.css" rel="stylesheet" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="js/jquery.js"></script>
+    <script src="js/myscript2.js" defer></script>
+    <script src="js/classes.js" defer></script>
+    <script src="js/myscript.js" defer></script>
+    <script src="js/weatherconditions.js" defer></script>
+  </head>
 
-</head>
+  <body>
+    <div class="main-container">
+      <div class="search">
+        <input type="text" id="userInput" placeholder="" autofocus />
+        <div id="submitButton">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+      </div>
+      <div class="main-info">
+        <div class="city-info">
+          <div class="date-time">
+            <div class="date"></div>
+            <div class="time"></div>
+          </div>
+          <div class="city-name"></div>
+        </div>
+        <div class="wCond">
+          <div class="type"></div>
+          <div class="time"></div>
+        </div>
+        <div class="temp">
+          <div class="current-icon"></div>
+          <div class="city-temp"></div>
+          <div class="deg-type">
+            <div class="deg-c">&deg;C</div>
+            <div class="divider"></div>
+            <div class="deg-f">&deg;F</div>
+          </div>
+        </div>
+        <div class="feelsLikeTemp">
+          <p>Feels like</p>
+          <p>4</p>
+        </div>
+      </div>
+      <div class="other-info"></div>
+      <div class="other-city-info">
+        <div class="wind">
+          <div class="title">
+            <img src="images/icons/wind.png" />
+            <p>Wind</p>
+          </div>
+          <div class="wind-data"></div>
+        </div>
+        <div class="humidity">
+          <div class="title">
+            <img src="images/icons/humidity.png" />
+            <p>Humidity</p>
+          </div>
+          <div class="humidity-data"></div>
+        </div>
+        <div class="pressure">
+          <div class="title">
+            <img src="images/icons/pressure.png" />
+            <p>Pressure</p>
+          </div>
+          <div class="pressure-data"></div>
+        </div>
+        <div class="high">
+          <div class="title">
+            <img src="images/icons/high.png" />
+            <div class="high-data"></div>
+          </div>
+		  <div class="title">
+            <img src="images/icons/low.png" />
+		  <div class="low-data"></div>
+          </div>
+        </div>
 
-<body>
-	<div class="main-container">
-		<div class="search">
-			<input type="text" id="userInput" placeholder=""autofocus>
-			<div id="submitButton"><i class="fa-solid fa-magnifying-glass"></i></div>
-		</div>
-		<div class="main-info">
-			<div class="city-info">
-				<div class="date-time">
-					<div class="date"></div>
-					<div class="time"></div>
-				</div>
-				<div class="city-name"></div>
-			</div>
-			<div class="wCond">
-				<div class="type"></div>
-				<div class="time"></div>
-			</div>
-			<div class="temp">
-				<div class="current-icon"></div>
-				<div class="city-temp"></div>
-				<div class="deg-type">
-						<div class="deg-c">&deg;C</div>
-						<div class="divider"></div>
-						<div class="deg-f">&deg;F</div>
-				</div>
-			</div>
-			<div class="feelsLikeTemp">
-				<p>Feels like</p>
-				<p>4</p>
-			</div>
-			
-		</div>
-		<div class="other-info">
-
-		</div>
-		<div class="other-city-info">
-			<div class="wind">
-				<div class="title">
-					<img src="images/icons/wind.png">
-					<p>Wind</p>
-				</div>
-				<div class="wind-data"></div>
-			</div>
-			<div class="Humidity">
-				<div class="title">
-					<img src="images/icons/humidity.png">
-					<p>Humidity</p>
-				</div>
-				<div class="humidity-data"></div>
-			</div>
-			<div class="pressure">
-				<div class="title">
-					<img src="images/icons/pressure.png">
-					<p>Pressure</p>
-				</div>
-				<div class="pressure-data"></div>
-			</div>
-			<div class="high">
-				<div class="title">
-					<img src="images/icons/high.png">
-					<p>High</p>
-				</div>
-				<div class="high-data"></div>
-			</div>
-			<div class="low">
-				<div class="title">
-					<img src="images/icons/low.png">
-					<p>Low</p>
-				</div>
-				<div class="low-data"></div>
-			</div>
-			<div class="sunrise">
-				<div class="title">
-					<img src="images/icons/sunrise.png">
-					<p>Sunrise</p>
-				</div>
-				<div class="sunrise-data"></div>
-			</div>
-			<div class="sunset">
-				<div class="title">
-					<img src="images/icons/sunset.png">
-					<p>Sunset</p>
-				</div>
-				<div class="sunset-data"></div>
-			</div>
-		</div>
-	</div>
-	
-</body>
+        <div class="sunrise">
+          <div class="title">
+            <img src="images/icons/sunrise.png" />
+            <p>Sunrise</p>
+          </div>
+          <div class="sunrise-data"></div>
+        </div>
+        <div class="sunset">
+          <div class="title">
+            <img src="images/icons/sunset.png" />
+            <p>Sunset</p>
+          </div>
+          <div class="sunset-data"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
