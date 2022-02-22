@@ -47,17 +47,20 @@ class APIDATA {
   }
 
   weather() {
-    for (let i of this.data.weather) {
-      if (i.icon.includes("n")) {
-        dayOrNight = "night";
-      } else {
-        dayOrNight = "morning";
-      }
-      typeOfWeather = i.main;
-      weatherID = i.id;
+    let weatherData = this.data.weather[0];
+    if (weatherData.icon.includes("n")) {
+      dayOrNight = "night";
+    } else {
+      dayOrNight = "morning";
     }
+    typeOfWeather = weatherData.main;
+    weatherID = weatherData.id;
+
     loadWeatherData();
   }
+
+    
+  
 
   dateAndTime() {
     // from stackoverflow

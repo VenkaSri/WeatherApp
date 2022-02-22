@@ -65,6 +65,7 @@ function weatherData(data) {
 //[rainMArray, cloudMArray, thunderMArray]
 
 function loopThroughJSON(wData) {
+  console.log(wData);
   for (let x of wData) {
     if (x.id === weatherID) {
       cityInfo.innerHTML = x.desc;
