@@ -1,4 +1,4 @@
-class Weather {
+class Atmosphere {
   constructor(id, desc, icon) {
     this.id = id;
     this.desc = desc;
@@ -8,6 +8,7 @@ class Weather {
 
 function weatherData(data) {
   if (dayOrNight === "night") {
+    atmosphereData(data.night.atmosphere);
     switch (typeOfWeather) {
       case "Clouds":
         loopThroughJSON(data.night.clouds);
@@ -27,13 +28,11 @@ function weatherData(data) {
       case "Snow":
         loopThroughJSON(data.night.snow);
         break;
-      case "Atmosphere":
-        loopThroughJSON(data.night.atmosphere);
-        break;
       default:
         break;
     }
   } else {
+    atmosphereData(data.day.atmosphere);
     switch (typeOfWeather) {
       case "Clouds":
         loopThroughJSON(data.day.clouds);
@@ -53,9 +52,6 @@ function weatherData(data) {
       case "Snow":
         loopThroughJSON(data.day.snow);
         break;
-      case "Atmosphere":
-        loopThroughJSON(data.day.atmosphere);
-        break;
       default:
         break;
     }
@@ -65,11 +61,19 @@ function weatherData(data) {
 //[rainMArray, cloudMArray, thunderMArray]
 
 function loopThroughJSON(wData) {
-  console.log(wData);
   for (let x of wData) {
     if (x.id === weatherID) {
       cityInfo.innerHTML = x.desc;
       currentTempIcon.innerHTML = `<img src="images/icons/${x.img}">`;
-    }
+    }   
+  }
+}
+
+function atmosphereData(atmosData) {
+  for (let x of atmosData) {
+    if (x.id === weatherID) {
+      cityInfo.innerHTML = x.desc;
+      currentTempIcon.innerHTML = `<img src="images/icons/${x.img}">`;
+    }   
   }
 }

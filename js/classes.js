@@ -47,6 +47,7 @@ class APIDATA {
   }
 
   weather() {
+    
     let weatherData = this.data.weather[0];
     if (weatherData.icon.includes("n")) {
       dayOrNight = "night";

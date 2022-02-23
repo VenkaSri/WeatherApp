@@ -239,7 +239,7 @@
       {
         "id": 700,
         "desc": "mist",
-        "img": "sunny.png"
+        "img": "fog.png"
       },
       {
         "id": 711,
@@ -527,9 +527,9 @@
     ],
     "atmosphere": [
       {
-        "id": 700,
+        "id": 701,
         "desc": "mist",
-        "img": "sunny.png"
+        "img": "fog.png"
       },
       {
         "id": 711,
