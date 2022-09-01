@@ -2,7 +2,7 @@
 
 [Click here for a live preview](https://venkasri.github.io/WeatherApp/)
 
-I had so fun creating this application although, not from scratch, but I still learned ALOT!
+I had so much fun creating this application, although not from scratch, but I still learned ALOT!
 
 I took a Web Based Application from course where I'm currently studying where our professor showed us an example of a very simple weather app using OpenWeatherAPI. 
 
@@ -27,8 +27,8 @@ This course was my introduction to APIs, I really enjoyed learning about it, and
 
 
 ## Demo
-
 ![App Demo](https://i.imgur.com/AY2XdNo.gif)
+
 
 
 
