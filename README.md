@@ -4,7 +4,7 @@
 
 I had so much fun creating this application, although not from scratch, but I still learned ALOT!
 
-I took a Web Based Application from course where I'm currently studying where our professor showed us an example of a very simple weather app using OpenWeatherAPI. 
+I took a Web Based Application course from where I'm currently studying, where our professor showed us an example of a very simple weather app using OpenWeatherAPI. 
 
 
 ### Endpoint prof used: 
